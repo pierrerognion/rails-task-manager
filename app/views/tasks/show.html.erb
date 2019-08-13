@@ -3,4 +3,9 @@
 <h2>Done? <%= @status %></h2>
 <h3><%= @task.details %></h3>
 <br>
+<p><%= link_to "Delete", task_path(@task),
+  method: :delete,
+  data: { confirm: "Are you sure?" } %></p>
+<p><%= link_to("Edit this task", edit_task_path(@task)) %></p>
+<br>
 <p><%= link_to("Back to list", "/tasks") %></p>

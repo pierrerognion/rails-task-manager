@@ -3,5 +3,10 @@
 <% @tasks.each do |task| %>
 <% task.completed == true ? @status = "✅" : @status = "❌" %>
 
-  <p><%= @status %> <%= link_to task.title, task_path(task) %></p>
+  <p><%= @status %> <%= link_to task.title, task_path(task) %> - <%= link_to "Delete", delete_task_path(task),
+    method: :delete,
+    data: { confirm: "Are you sure?" } %></p>
 <% end %>
+<br>
+<p>-------------</p>
+<p><%= link_to "Add a new task", new_task_path %></p>
